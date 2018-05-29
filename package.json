@@ -4,6 +4,7 @@
     "main": "index.js",
     "license": "MIT",
     "dependencies": {
+        "express": "^4.16.3",
         "history": "4.7.2",
         "normalize.css": "7.0.0",
         "react": "16.0.0",
@@ -23,6 +24,7 @@
         "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
         "test:watch": "yarn test -- --watch",
         "test:coverage": "yarn test -- --coverage",
+        "start": "node server/server.js",
         "heroku-postbuild": "yarn run build:prod",
         "deploy": "git push heroku master && heroku open"
     },
