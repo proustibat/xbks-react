@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Header correctly 1`] = `
+<Headroom
+  calcHeightOnResize={true}
+  disable={false}
+  disableInlineStyles={false}
+  downTolerance={0}
+  onPin={[Function]}
+  onUnfix={[Function]}
+  onUnpin={[Function]}
+  parent={[Function]}
+  pinStart={0}
+  upTolerance={5}
+  wrapperStyle={Object {}}
+>
+  <header
+    className="header"
+  >
+    <div
+      className="content-container"
+    >
+      <div
+        className="header__content"
+      >
+        <Link
+          className="header__title"
+          replace={false}
+          to="/"
+        >
+          <h1>
+            XBKS
+          </h1>
+        </Link>
+        <button
+          className="button button--link"
+        >
+          Cart
+        </button>
+      </div>
+    </div>
+  </header>
+</Headroom>
+`;

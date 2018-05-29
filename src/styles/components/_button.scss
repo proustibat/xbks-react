@@ -1,0 +1,35 @@
+.button {
+  background: $blue;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-size: $font-size-large;
+  font-weight: 300;
+  padding: $s-size;
+  text-decoration: none;
+}
+
+.button--link {
+  background: none;
+}
+//
+//.button--secondary {
+//  background: #888;
+//}
+//.button--valid {
+//  background: #22881b;
+//}
+//
+//.button--cancel {
+//  background: #b43b30;
+//}
+//
+//.button-container--space-around {
+//  display: flex;
+//  justify-content: space-around;
+//}
+//
+//.button-container--center {
+//  display: flex;
+//  justify-content: center;
+//}

@@ -3,22 +3,20 @@ import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import PageNotFound from '../components/PageNotFound';
 import PageHome from "../components/PageHome";
-
+import HeaderRoute from "../routers/HeaderRoute";
 
 export const history = createHistory();
 
 const AppRouter = () => (
     <Router history={ history }>
-        <div>
-            <Switch>
-                <Route
-                    exact = { true }
-                    path = "/"
-                    component = { PageHome }
-                />
-                <Route component = { PageNotFound } />
-            </Switch>
-        </div>
+        <Switch>
+            <HeaderRoute
+                exact = { true }
+                path = "/"
+                component = { PageHome }
+            />
+            <HeaderRoute component = { PageNotFound } />
+        </Switch>
     </Router>
 );
 
