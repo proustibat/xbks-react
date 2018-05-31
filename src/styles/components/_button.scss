@@ -3,11 +3,17 @@
   border: none;
   color: #fff;
   display: inline-block;
-  font-size: $font-size-large;
+  font-size: $font-size-medium;
   font-weight: 300;
   padding: $s-size;
   text-decoration: none;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
 }
+
 
 .button--link {
   background: none;

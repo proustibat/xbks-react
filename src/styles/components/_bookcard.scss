@@ -1,0 +1,98 @@
+.bookcard {
+  font-size: $font-size-medium;
+  font-weight: 300;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: $s-size;
+  margin: $m-size;
+}
+
+.bookcard-sticky {
+  position: relative;
+  background: $white;
+}
+.bookcard-sticky-top {
+  top: 0;
+}
+.bookcard-sticky-bottom {
+  bottom: 0;
+}
+
+@supports(position:sticky){
+  .bookcard-sticky {
+    position: sticky;
+  }
+}
+
+.bookcard__row {
+  display: flex;
+  flex-direction: row;
+  margin-top: $s-size;
+  @media (max-width: $desktop-breakpoint - .01rem) {
+    flex-direction: column-reverse;
+  }
+}
+
+.bookcard__cell-cover {
+  width: 30%;
+}
+.bookcard__cell-details {
+  width: 70%;
+}
+
+@media (max-width: $desktop-breakpoint - .01rem) {
+  .bookcard__cell-cover,
+  .bookcard__cell-details {
+    width: 100%;
+    padding: 0;
+  }
+  .bookcard__cover {
+    width: 70%;
+  }
+}
+
+.bookcard__cover {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.bookcard__details {
+  padding: 0 0 0 $s-size;
+}
+
+.bookcard__title {
+  margin: 0;
+  border: 1px solid #cacccd;
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: $font-size-large;
+  padding: $s-size;
+  background: $off-white;
+}
+
+.bookcard__description {
+  font-size: $font-size-small;
+  margin: 0;
+  line-height: 1.5;
+
+  @media (max-width: $desktop-breakpoint - .01rem) {
+    margin-bottom: $s-size;
+  }
+}
+
+.bookcard__price {
+  padding: $s-size;
+  border: 1px solid #cacccd;
+  margin: $s-size 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: $off-white;
+
+  span {
+    font-weight: 400;
+  }
+}
+
+
