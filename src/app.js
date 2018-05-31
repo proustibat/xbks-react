@@ -34,7 +34,7 @@ ReactDOM.render( <PageLoading />, document.querySelector( '#app' ) );
 
 
 // When the page first loads
-fetch( 'http://henri-potier.xebia.fr/books' )
+fetch( 'http://henri-potier.xebia.fr/books', { mode: 'no-cors' } )
     .then( response => {
         if ( response.status !== 200 ) {
             console.log( 'Looks like there was a problem. Status Code: ' + response.status );
