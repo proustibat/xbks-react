@@ -9,10 +9,8 @@ export class PageBook extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className="content-container">
-                    <BookCard book = { this.props.book } />
-                </div>
+            <div className="content-container">
+                <BookCard book = { this.props.book } />
             </div>
         );
     }
