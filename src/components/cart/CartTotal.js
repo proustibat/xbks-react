@@ -11,7 +11,7 @@ const CartTotal = props => (
             <span className="cart-totals__line-amount">{ numeral( props.subtotal ).format( '0.00$' ) }</span>
         </p>
         <p className="cart-totals__line">
-            <span className="cart-totals__line-label">Reductions <em>(type: { props.discount.type })</em>:</span>
+            <span className="cart-totals__line-label">Reductions (type: <em>{ props.discount.type }</em>):</span>
             <span className="cart-totals__line-amount">{ numeral( props.discount.amount ).format( '0.00$' ) }</span>
         </p>
 
