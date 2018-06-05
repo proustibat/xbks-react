@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import numeral from 'numeral';
-import { changeQuantity } from '../../actions/cart';
+import { changeQuantity, removeBook } from '../../actions/cart';
 import { startSetOffers } from "../../actions/offers";
 
 export class CartItem extends React.Component {
@@ -28,11 +28,21 @@ export class CartItem extends React.Component {
         this.setState( () => ( { quantity } ) );
 
         this.props.changeQuantity( {
-            isbn: this.props.isbn,
+            isbn: this.state.isbn,
             qtt: quantity
         } );
-
         this.props.startSetOffers();
+    };
+
+    handleRemove = () => {
+      console.log( 'REMOVE ', this.state.isbn );
+
+      this.props.removeBook( this.state.isbn );
+      this.props.startSetOffers();
+        // this.props.changeQuantity( {
+        //     isbn: this.state.isbn,
+        //     qtt: 0
+        // } );
     };
 
     render() {
@@ -41,7 +51,8 @@ export class CartItem extends React.Component {
             <span className="cart-list__col-item">
                 <Link className="cart-list__col-item-title" to={ `/book/${ this.state.isbn }` }>{ this.state.title }</Link>
             </span>
-                <span className="cart-list__col-qtt">
+            <span className="cart-list__col-qtt">
+                <button className="cart-list__delete" onClick={ this.handleRemove }>Remove</button>
                 <input type="number" min="0" id="itemsNumber" defaultValue={ this.state.quantity } step="1" onInput={ this.handleNumberChange } />
             </span>
                 <span className="cart-list__col-unit-price">{ numeral( this.state.price ).format( '0.00$') }</span>
@@ -53,6 +64,7 @@ export class CartItem extends React.Component {
 
 const mapDispatchToProps = dispatch => ( {
     changeQuantity: ( { isbn, qtt } ) => dispatch( changeQuantity( { isbn, qtt } ) ),
+    removeBook: isbn => dispatch( removeBook( isbn ) ),
     startSetOffers: () => dispatch ( startSetOffers() )
 } );
 

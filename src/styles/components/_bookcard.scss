@@ -6,23 +6,6 @@
   margin: $m-size 0;
 }
 
-.bookcard-sticky {
-  position: relative;
-  background: $white;
-}
-.bookcard-sticky-top {
-  top: 0;
-}
-.bookcard-sticky-bottom {
-  bottom: 0;
-}
-
-@supports(position:sticky){
-  .bookcard-sticky {
-    position: sticky;
-  }
-}
-
 .bookcard__row {
   display: flex;
   flex-direction: row;

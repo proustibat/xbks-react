@@ -1,3 +1,7 @@
+.cart {
+  margin: 3.2rem auto;
+}
+
 .cart-list-header,
 .cart-list-item {
   display: flex;
@@ -6,6 +10,11 @@
 
 .cart-list-header {
   @extend .list-item;
+
+  .cart-list__col-qtt {
+    text-align: right;
+    padding-right: 1.8rem;
+  }
 }
 
 .cart-list-item {
@@ -32,7 +41,7 @@
 }
 
 .cart-list__col-qtt {
-  width: 15%;
+  width: 40%;
   text-align: center;
 
   input {
@@ -42,7 +51,7 @@
 }
 
 .cart-list__col-unit-price {
-  width: 30%;
+  width: 15%;
   text-align: center;
 }
 
@@ -63,6 +72,11 @@
   margin: 0;
   padding: 0 $s-size;
   border-bottom: 1px solid darken( $off-white, 7%);
+  font-size: $s-size;
+
+  &:last-child {
+    font-size: $m-size;
+  }
 
 }
 
@@ -73,4 +87,12 @@
 .cart-totals__line-amount {
   text-align: right;
   width: 20%;
+}
+
+.cart-list__delete {
+  display: inline-block;
+}
+
+.cart-list__empty-message {
+  text-align: center;
 }

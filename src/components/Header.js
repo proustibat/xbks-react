@@ -10,9 +10,9 @@ export const Header = ( props ) => (
                <Link className="header__title" to="/" >
                    <h1>XBKS</h1>
                </Link>
-               <button className="button button--link">
+               <Link className="button button--link" to="/cart">
                    Cart { props.items > 0 && ( <span className="header__cart-info--items"><br/>{ props.items } items</span> ) }
-               </button>
+               </Link>
            </div>
        </div>
    </header>

@@ -19,8 +19,8 @@ export const setBestOffers = ( bestOffer = {
 export const startSetOffers = () => {
     return ( dispatch, getState ) => {
         if ( getState().cart.books.length === 0) {
-            dispatch( setOffers( null ) );
-            dispatch( setBestOffers( null ) );
+            dispatch( setOffers() );
+            dispatch( setBestOffers() );
         }
         // Get all the isbn to fetch api
         const isbnList = [];

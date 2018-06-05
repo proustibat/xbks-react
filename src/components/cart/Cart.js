@@ -5,7 +5,7 @@ import CartTotal from './CartTotal';
 export class Cart extends React.Component {
     render () {
         return (
-            <div className="cart">
+            <div className="cart content-container">
                 <CartList />
                 <CartTotal />
             </div>

@@ -5,7 +5,7 @@ import CartItem from './CartItem';
 const CartList = props => (
     <div className="cart-list">
         { props.books.length === 0 ? (
-            <span>Your cart is empty</span>
+            <p className="cart-list__empty-message">Your cart is empty</p>
         ) : (
             <div>
                 <div className="cart-list-header">

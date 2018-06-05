@@ -17,9 +17,8 @@ export default class BookCard extends React.Component {
     render() {
         return (
             <div className="bookcard">
-                <div className="bookcard-sticky bookcard-sticky-top">
-                    <h1 className="bookcard__title">{ this.state.title }</h1>
-                </div>
+                <h1 className="bookcard__title">{ this.state.title }</h1>
+
                 <div className="bookcard__row">
                     <div className="bookcard__cell-cover">
                         <img className="bookcard__cover" src={ this.state.cover } alt={ `cover for ${ this.state.title }` } />

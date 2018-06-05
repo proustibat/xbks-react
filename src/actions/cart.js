@@ -3,7 +3,7 @@ export const addBook = book => ( {
     book
 } );
 
-export const removeBook = ( { isbn } = {} ) => ( {
+export const removeBook = ( isbn = '' ) => ( {
     type: 'REMOVE_BOOK',
     isbn
 } );

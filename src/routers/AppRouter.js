@@ -5,6 +5,7 @@ import createHistory from 'history/createBrowserHistory';
 import HeaderRoute from '../routers/HeaderRoute';
 import PageHome from '../pages/PageHome';
 import PageBook from '../pages/PageBook';
+import PageCart from '../pages/PageCart';
 import PageNotFound from '../pages/PageNotFound';
 import ScrollToTop from "./ScrollToTop";
 
@@ -18,6 +19,11 @@ const AppRouter = () => (
                     exact = { true }
                     path = "/"
                     component = { PageHome }
+                />
+                <HeaderRoute
+                    exact = { true }
+                    path = "/cart"
+                    component = { PageCart }
                 />
                 <HeaderRoute
                     path = "/book/:isbn"
