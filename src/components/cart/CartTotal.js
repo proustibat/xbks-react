@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import getSubTotal from '../../selectors/getSubTotal';
-import getBestDiscount from '../../selectors/getBestDiscount';
 import numeral from "numeral";
 
 const CartTotal = props => (

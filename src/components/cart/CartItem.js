@@ -1,16 +1,59 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import numeral from 'numeral';
+import { changeQuantity } from '../../actions/cart';
+import { startSetOffers } from "../../actions/offers";
 
-const CartItem = ( { isbn, title, price, quantity } ) => (
-    <div className="cart-list-item">
-        <span className="cart-list__col-item">
-            <Link className="cart-list__col-item-title" to={ `/book/${ isbn }` }>{ title }</Link>
-        </span>
-        <span className="cart-list__col-qtt">{ quantity }</span>
-        <span className="cart-list__col-unit-price">{ numeral( price ).format( '0.00$' ) }</span>
-        <span className="cart-list__col-sub-total">{ numeral( price * quantity ).format( '0.00$' ) }</span>
-    </div>
-);
+export class CartItem extends React.Component {
 
-export default CartItem;
+    state = {
+      subTotal: 444
+    };
+
+    constructor( props ) {
+        super( props );
+        this.state = {
+            isbn: props.isbn || '',
+            title: props.title || '',
+            price: props.price || 0,
+            quantity: props.quantity || 0
+        }
+    }
+
+    handleNumberChange = ( e ) => {
+        console.log( this.props.isbn, e.currentTarget.value );
+        const quantity = parseInt( e.currentTarget.value, 10 );
+
+        this.setState( () => ( { quantity } ) );
+
+        this.props.changeQuantity( {
+            isbn: this.props.isbn,
+            qtt: quantity
+        } );
+
+        this.props.startSetOffers();
+    };
+
+    render() {
+        return (
+            <div className="cart-list-item">
+            <span className="cart-list__col-item">
+                <Link className="cart-list__col-item-title" to={ `/book/${ this.state.isbn }` }>{ this.state.title }</Link>
+            </span>
+                <span className="cart-list__col-qtt">
+                <input type="number" min="0" id="itemsNumber" defaultValue={ this.state.quantity } step="1" onInput={ this.handleNumberChange } />
+            </span>
+                <span className="cart-list__col-unit-price">{ numeral( this.state.price ).format( '0.00$') }</span>
+                <span className="cart-list__col-sub-total">{ numeral( this.state.quantity * this.state.price ).format( '0.00$' ) }</span>
+            </div>
+        );
+    }
+}
+
+const mapDispatchToProps = dispatch => ( {
+    changeQuantity: ( { isbn, qtt } ) => dispatch( changeQuantity( { isbn, qtt } ) ),
+    startSetOffers: () => dispatch ( startSetOffers() )
+} );
+
+export default connect( undefined, mapDispatchToProps )( CartItem );

@@ -1,6 +1,6 @@
 export default ( books=[], offers, subTotal = 0 ) => {
      if ( books.length === 0 || offers.length === 0 ) {
-         return {type: "none", value: 0, amount: 0};
+         return { type: "none", value: 0, amount: 0 };
      }
      const discounts = [];
      offers.forEach( offer => {

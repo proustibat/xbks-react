@@ -13,3 +13,9 @@ export const setSavedBooks = books => ( {
     type: 'SET_SAVE_BOOKS',
     books
 } );
+
+export const changeQuantity = ( { isbn, qtt } ) => ( {
+    type: 'CHANGE_QUANTITY',
+    isbn,
+    qtt
+} );

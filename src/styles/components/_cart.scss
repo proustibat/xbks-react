@@ -34,6 +34,11 @@
 .cart-list__col-qtt {
   width: 15%;
   text-align: center;
+
+  input {
+    text-align: center;
+    width: 4rem;
+  }
 }
 
 .cart-list__col-unit-price {

@@ -2,19 +2,26 @@ import getBestDiscount from '../selectors/getBestDiscount';
 import getSubTotal from '../selectors/getSubTotal';
 
 // SET_OFFERS
-export const setOffers = offers => ( {
+export const setOffers = ( offers = [] ) => ( {
     type: 'SET_OFFERS',
     offers
 } );
 
 // SET_BEST_OFFER
-export const setBestOffers = bestOffer => ( {
+export const setBestOffers = ( bestOffer = {
+    type: 'none',
+    amount: 0
+} ) => ( {
     type: 'SET_BEST_OFFER',
     bestOffer
 } );
 
 export const startSetOffers = () => {
     return ( dispatch, getState ) => {
+        if ( getState().cart.books.length === 0) {
+            dispatch( setOffers( null ) );
+            dispatch( setBestOffers( null ) );
+        }
         // Get all the isbn to fetch api
         const isbnList = [];
         getState().cart.books.forEach( book => {

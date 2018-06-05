@@ -26,6 +26,15 @@ export default ( state = cartReducerDefaultState, action ) => {
                 }
             } );
             return { ...state, ...{ books: action.books } };
+        case 'CHANGE_QUANTITY':
+            const booksList = [...state.books];
+            let newBookList = booksList
+                .map( book => {
+                    book.quantity = book.isbn === action.isbn ? action.qtt : book.quantity;
+                    return book;
+                } )
+                .filter( book => book.quantity > 0 );
+            return { ...state, ...{ books: newBookList } };
         default:
             return state;
     }
