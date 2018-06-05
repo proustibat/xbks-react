@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getAbsoluteTotal, getDiscount, getFinalTotal } from '../../selectors/cart-total';
+import getSubTotal from '../../selectors/getSubTotal';
+import getBestDiscount from '../../selectors/getBestDiscount';
 import numeral from "numeral";
 
 const CartTotal = props => (
@@ -10,8 +11,8 @@ const CartTotal = props => (
             <span className="cart-totals__line-amount">{ numeral( props.subtotal ).format( '0.00$' ) }</span>
         </p>
         <p className="cart-totals__line">
-            <span className="cart-totals__line-label">Reductions:</span>
-            <span className="cart-totals__line-amount">{ numeral( props.discount ).format( '0.00$' ) }</span>
+            <span className="cart-totals__line-label">Reductions <em>(type: { props.discount.type })</em>:</span>
+            <span className="cart-totals__line-amount">{ numeral( props.discount.amount ).format( '0.00$' ) }</span>
         </p>
 
         <p className="cart-totals__line">
@@ -22,9 +23,9 @@ const CartTotal = props => (
 );
 
 const mapStateToProps = state => ( {
-    subtotal: getAbsoluteTotal( state.cart.books ),
-    discount: getDiscount( state.cart.books ),
-    total: getFinalTotal( state.cart.books )
+    subtotal: getSubTotal( state.cart.books ),
+    discount: state.offers.bestOffer,
+    total: getSubTotal( state.cart.books ) - state.offers.bestOffer.amount
 } );
 
 export default connect( mapStateToProps )( CartTotal );

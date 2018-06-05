@@ -9,8 +9,9 @@ import configureNumeral from './configs/configureNumeral';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
-import { setBooks } from "./actions/books";
-import {setSavedBooks} from "./actions/cart";
+import { setBooks } from './actions/books';
+import { setSavedBooks } from './actions/cart';
+import { startSetOffers } from './actions/offers';
 
 configureNumeral();
 
@@ -48,8 +49,8 @@ fetch( 'http://henri-potier.xebia.fr/books' )
                 store.dispatch( setBooks( books ) );
 
                 // TODO: check if a cart is saved in cookie or localstorage
-                // then use store.dispatch( setSavedBooks( data ) )
                 store.dispatch( setSavedBooks( [ books[ 1 ], books[ 2 ] ] ) );
+                store.dispatch( startSetOffers() );
 
                 renderApp();
             });

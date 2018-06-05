@@ -1,14 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BookCard from '../components/BookCard';
-import { startAddBook, removeBook } from "../actions/cart";
+import { addBook, removeBook } from "../actions/cart";
+import { startSetOffers } from "../actions/offers";
 
 export class PageBook extends React.Component {
 
     onAdd = () => {
-        console.log("ADD");
-        this.props.startAddBook( this.props.book );
-        //this.props.addToCart( this.props.book );
+        this.props.addToCart( this.props.book );
+        this.props.startSetOffers();
+        this.props.history.push( '/' );
     };
 
     render() {
@@ -29,8 +30,9 @@ const mapStateToProps = ( state, props ) => ( {
 } );
 
 const mapDispatchToProps = dispatch => ( {
-    startAddBook: book => dispatch( startAddBook( book ) ),
-    removeFromCart: isbn => dispatch( removeBook( { isbn } ) )
+    addToCart: book => dispatch( addBook( book ) ),
+    removeFromCart: isbn => dispatch( removeBook( { isbn } ) ),
+    startSetOffers: () => dispatch ( startSetOffers() )
 } );
 
 
