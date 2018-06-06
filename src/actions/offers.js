@@ -29,6 +29,7 @@ export const startSetOffers = () => {
                 isbnList.push( book.isbn );
             }
         } );
+        if ( isbnList.length === 0 ) return;
 
         // fetch api to get offers
         const url = `http://henri-potier.xebia.fr/books/${ isbnList.join( ',' ) }/commercialOffers`;

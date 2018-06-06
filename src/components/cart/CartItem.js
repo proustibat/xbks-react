@@ -35,14 +35,8 @@ export class CartItem extends React.Component {
     };
 
     handleRemove = () => {
-      console.log( 'REMOVE ', this.state.isbn );
-
       this.props.removeBook( this.state.isbn );
       this.props.startSetOffers();
-        // this.props.changeQuantity( {
-        //     isbn: this.state.isbn,
-        //     qtt: 0
-        // } );
     };
 
     render() {

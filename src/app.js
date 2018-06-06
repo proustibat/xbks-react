@@ -49,8 +49,8 @@ fetch( 'http://henri-potier.xebia.fr/books' )
                 store.dispatch( setBooks( books ) );
 
                 // TODO: check if a cart is saved in cookie or localstorage
-                store.dispatch( setSavedBooks( [ books[ 1 ], books[ 2 ] ] ) );
-                store.dispatch( startSetOffers() );
+                //store.dispatch( setSavedBooks( [ books[ 1 ], books[ 2 ] ] ) );
+                //store.dispatch( startSetOffers() );
 
                 renderApp();
             });

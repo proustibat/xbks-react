@@ -13,7 +13,6 @@ export class PageBook extends React.Component {
     };
 
     render() {
-        console.log( 'BOOK ', this.props.book );
         return (
             <div className="content-container flex-container-col">
                 <BookCard
