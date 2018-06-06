@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BookListItem from './BookListItem';
+import getVisibleBooks from "../selectors/getVisibleBooks";
 
 export class BookList extends React.Component {
     render() {
@@ -22,7 +23,7 @@ export class BookList extends React.Component {
 }
 
 const mapStateToProps = state => ( {
-    books: state.books
+    books: getVisibleBooks( state.books, { searchTerm: state.filters.searchTerm } )
 } );
 
 export default connect( mapStateToProps )( BookList );
