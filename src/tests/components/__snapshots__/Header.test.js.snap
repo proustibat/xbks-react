@@ -1,44 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should render Header correctly 1`] = `
-<Headroom
-  calcHeightOnResize={true}
-  disable={false}
-  disableInlineStyles={false}
-  downTolerance={0}
-  onPin={[Function]}
-  onUnfix={[Function]}
-  onUnpin={[Function]}
-  parent={[Function]}
-  pinStart={0}
-  upTolerance={5}
-  wrapperStyle={Object {}}
+exports[`Should render Header component correctly with items in cart 1`] = `
+<header
+  className="header"
 >
-  <header
-    className="header"
+  <div
+    className="content-container"
   >
     <div
-      className="content-container"
+      className="header__content"
     >
-      <div
-        className="header__content"
+      <Link
+        className="header__title"
+        replace={false}
+        to="/"
       >
-        <Link
-          className="header__title"
-          replace={false}
-          to="/"
+        <h1>
+          XBKS
+        </h1>
+      </Link>
+      <Link
+        className="button button--link"
+        replace={false}
+        to="/cart"
+      >
+        Cart 
+        <span
+          className="header__cart-info--items"
         >
-          <h1>
-            XBKS
-          </h1>
-        </Link>
-        <button
-          className="button button--link"
-        >
-          Cart
-        </button>
-      </div>
+          <br />
+          2
+           items
+        </span>
+      </Link>
     </div>
-  </header>
-</Headroom>
+  </div>
+</header>
+`;
+
+exports[`Should render Header component correctly with no any items in cart 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="header__content"
+    >
+      <Link
+        className="header__title"
+        replace={false}
+        to="/"
+      >
+        <h1>
+          XBKS
+        </h1>
+      </Link>
+      <Link
+        className="button button--link"
+        replace={false}
+        to="/cart"
+      >
+        Cart 
+      </Link>
+    </div>
+  </div>
+</header>
 `;

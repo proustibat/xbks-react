@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import getSubTotal from '../../selectors/getSubTotal';
 import numeral from "numeral";
 
-const CartTotal = props => (
+export const CartTotal = props => (
     <div className="cart-totals">
         <p className="cart-totals__line">
             <span className="cart-totals__line-label">Total before reductions:</span>

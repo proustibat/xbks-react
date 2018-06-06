@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render CartItem component correctly with data 1`] = `
+<div
+  className="cart-list-item"
+>
+  <span
+    className="cart-list__col-item"
+  >
+    <Link
+      className="cart-list__col-item-title"
+      replace={false}
+      to="/book/c8fabf68-8374-48fe-a7ea-a00ccd07afff"
+    >
+      Henri Potier à l'école des sorciers
+    </Link>
+  </span>
+  <span
+    className="cart-list__col-qtt"
+  >
+    <button
+      className="cart-list__delete"
+      onClick={[Function]}
+    >
+      Remove
+    </button>
+    <input
+      defaultValue={1}
+      id="itemsNumber"
+      min="0"
+      onInput={[Function]}
+      step="1"
+      type="number"
+    />
+  </span>
+  <span
+    className="cart-list__col-unit-price"
+  >
+    35.00$
+  </span>
+  <span
+    className="cart-list__col-sub-total"
+  >
+    35.00$
+  </span>
+</div>
+`;
+
+exports[`Should render CartItem component correctly with no data 1`] = `
+<div
+  className="cart-list-item"
+>
+  <span
+    className="cart-list__col-item"
+  >
+    <Link
+      className="cart-list__col-item-title"
+      replace={false}
+      to="/book/"
+    />
+  </span>
+  <span
+    className="cart-list__col-qtt"
+  >
+    <button
+      className="cart-list__delete"
+      onClick={[Function]}
+    >
+      Remove
+    </button>
+    <input
+      defaultValue={0}
+      id="itemsNumber"
+      min="0"
+      onInput={[Function]}
+      step="1"
+      type="number"
+    />
+  </span>
+  <span
+    className="cart-list__col-unit-price"
+  >
+    0.00$
+  </span>
+  <span
+    className="cart-list__col-sub-total"
+  >
+    0.00$
+  </span>
+</div>
+`;

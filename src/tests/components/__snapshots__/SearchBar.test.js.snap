@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render SearchBar component correctly with a searchTerm content 1`] = `
+<div
+  className="content-container"
+>
+  <input
+    className="searchbar__input"
+    onChange={[Function]}
+    placeholder="Search"
+    type="text"
+    value="Hello my searchterm"
+  />
+</div>
+`;
+
+exports[`Should render SearchBar component correctly without a searchTerm content 1`] = `
+<div
+  className="content-container"
+>
+  <input
+    className="searchbar__input"
+    onChange={[Function]}
+    placeholder="Search"
+    type="text"
+    value=""
+  />
+</div>
+`;

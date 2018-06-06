@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render BookListItem component correctly 1`] = `
+<Link
+  className="list-item"
+  replace={false}
+  to="/book/c8fabf68-8374-48fe-a7ea-a00ccd07afff"
+>
+  <span>
+    <img
+      alt=""
+      className="list-item__preview"
+      src="http://henri-potier.xebia.fr/hp0.jpg"
+    />
+  </span>
+  <h3
+    className="list-item__title"
+  >
+    Henri Potier à l'école des sorciers
+  </h3>
+  <span
+    className="list-item__data"
+  >
+    35.00$
+  </span>
+</Link>
+`;

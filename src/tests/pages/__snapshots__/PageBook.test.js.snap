@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render book page correctly 1`] = `
+<div
+  className="content-container flex-container-col"
+>
+  <BookCard />
+  <button
+    className="button button--secondary"
+    onClick={[Function]}
+  >
+    Buy this book
+  </button>
+</div>
+`;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BookCard from '../components/BookCard';
-import { addBook, removeBook } from "../actions/cart";
+import { addBook } from "../actions/cart";
 import { startSetOffers } from "../actions/offers";
 
 export class PageBook extends React.Component {
@@ -24,13 +24,12 @@ export class PageBook extends React.Component {
     }
 }
 
-const mapStateToProps = ( state, props ) => ( {
+export const mapStateToProps = ( state, props ) => ( {
     book: state.books.find( book => book.isbn === props.match.params.isbn )
 } );
 
-const mapDispatchToProps = dispatch => ( {
+export const mapDispatchToProps = dispatch => ( {
     addToCart: book => dispatch( addBook( book ) ),
-    removeFromCart: isbn => dispatch( removeBook( { isbn } ) ),
     startSetOffers: () => dispatch ( startSetOffers() )
 } );
 

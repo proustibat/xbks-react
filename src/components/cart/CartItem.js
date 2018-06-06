@@ -8,7 +8,7 @@ import { startSetOffers } from "../../actions/offers";
 export class CartItem extends React.Component {
 
     state = {
-      subTotal: 444
+      subTotal: 0
     };
 
     constructor( props ) {
