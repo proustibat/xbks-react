@@ -27,5 +27,4 @@ export default ( books=[], offers, subTotal = 0 ) => {
         type: bestDiscount.type,
         amount: bestDiscount.amount
     }
-
 };
