@@ -52,8 +52,6 @@ export const startSetOffers = () => {
                         );
                     } );
             } )
-            .catch( err => {
-                console.log( 'Fetch Error :-S', err );
-            } );
+            .catch( err => { console.log( 'Fetch Error :-S', err ); } );
     };
 }
